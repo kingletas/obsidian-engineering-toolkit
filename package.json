@@ -8,11 +8,11 @@
 		"test": "node tests/build.mjs && node esbuild.config.mjs production && node tests/scope.test.cjs && node tests/parser.test.cjs && node tests/ids.test.cjs && node tests/records.test.cjs && node tests/templates.test.cjs && node tests/linter.test.cjs && node tests/reliability.test.cjs && node tests/automation.test.cjs && node tests/dashboard.test.cjs && node tests/smoke.cjs"
 	},
 	"devDependencies": {
-		"@types/node": "^22.15.17",
-		"builtin-modules": "^3.3.0",
-		"esbuild": "^0.25.5",
+		"@types/node": "^26.5.0",
+		"builtin-modules": "^5.3.0",
+		"esbuild": "^0.28.2",
 		"obsidian": "latest",
-		"typescript": "^5.8.3"
+		"typescript": "^7.0.2"
 	},
 	"dependencies": {}
 }
