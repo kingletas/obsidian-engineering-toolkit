@@ -1,0 +1,48 @@
+# The suite builds a bundle, so it runs on push rather than on every commit.
+default_install_hook_types: [pre-commit, pre-push]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-json
+        # Obsidian rewrites these from memory on exit and they are not ours.
+        exclude: ^\.obsidian/
+      - id: check-yaml
+      - id: detect-private-key
+        # The scanner lists the marker it searches for, as data rather than as a key.
+        exclude: ^scripts/check_credentials\.py$
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: check-credentials
+        name: check for committed credentials
+        entry: python3 scripts/check_credentials.py
+        language: system
+        pass_filenames: true
+        exclude: ^scripts/check_credentials\.py$
+
+      # The author's own multi-lane gate, and the reason this hook is wrapped in a
+      # `command -v` test rather than called directly: `contract-gate` is a tool on
+      # one machine's PATH, not a dependency of this repository. Calling it
+      # unguarded would make `pre-commit install` fail for everyone who clones the
+      # repo, which is a strange way to enforce a standard nobody else has agreed to.
+      - id: contract-gate
+        name: contract gate (skipped when not installed)
+        entry: bash -c 'command -v contract-gate >/dev/null 2>&1 || exit 0; exec contract-gate run --only secrets --staged'
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: npm-test
+        name: type-check, build and test
+        entry: npm test
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]

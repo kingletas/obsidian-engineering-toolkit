@@ -1,0 +1,11 @@
+node_modules/
+main.js
+*.js.map
+tests/build/
+tests/main.build.cjs
+
+# Track shell scripts even where a user-level excludes file ignores *.sh.
+!*.sh
+
+# Disposable output: builds, screenshots and scratch notes that are never committed.
+local.d/

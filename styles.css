@@ -1,0 +1,214 @@
+/* Engineering Toolkit. Every colour is an Obsidian theme variable -- a
+   hardcoded hex is the one thing that cannot survive a theme change, and this
+   plugin's panes sit next to the user's own notes. */
+
+.engineering-toolkit {
+	padding: 0 0 2rem;
+	font-size: var(--font-ui-small);
+}
+
+.engineering-toolkit .et-header {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+	padding: 0.75rem 1rem;
+	border-bottom: 1px solid var(--background-modifier-border);
+	position: sticky;
+	top: 0;
+	background: var(--background-primary);
+	z-index: 1;
+}
+
+.engineering-toolkit .et-title {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-weight: 600;
+	font-size: var(--font-ui-medium);
+}
+
+.engineering-toolkit .et-title-icon {
+	display: flex;
+	color: var(--text-accent);
+}
+
+.engineering-toolkit .et-header-meta,
+.engineering-toolkit .et-muted {
+	color: var(--text-muted);
+}
+
+.engineering-toolkit .et-actions {
+	margin-left: auto;
+	display: flex;
+	gap: 0.4rem;
+	flex-wrap: wrap;
+}
+
+.engineering-toolkit .et-actions-left {
+	margin-left: 0;
+	padding: 0.5rem 0;
+}
+
+.engineering-toolkit .et-tabs {
+	display: flex;
+	gap: 0.25rem;
+	padding: 0.5rem 1rem 0;
+	border-bottom: 1px solid var(--background-modifier-border);
+	flex-wrap: wrap;
+}
+
+.engineering-toolkit .et-tab {
+	background: none;
+	border: none;
+	border-bottom: 2px solid transparent;
+	border-radius: 0;
+	padding: 0.35rem 0.6rem;
+	color: var(--text-muted);
+	cursor: pointer;
+	box-shadow: none;
+}
+
+.engineering-toolkit .et-tab.is-active {
+	color: var(--text-normal);
+	border-bottom-color: var(--text-accent);
+}
+
+.engineering-toolkit .et-body {
+	padding: 0.75rem 1rem;
+}
+
+.engineering-toolkit .et-section {
+	margin: 1.2rem 0 0.4rem;
+	font-size: var(--font-ui-small);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--text-muted);
+}
+
+.engineering-toolkit .et-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.engineering-toolkit .et-table th {
+	text-align: left;
+	font-weight: 600;
+	color: var(--text-muted);
+	padding: 0.2rem 0.5rem 0.2rem 0;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.engineering-toolkit .et-table td {
+	padding: 0.2rem 0.5rem 0.2rem 0;
+	vertical-align: top;
+}
+
+.engineering-toolkit .et-num,
+.engineering-toolkit .et-id,
+.engineering-toolkit .et-bar {
+	font-family: var(--font-monospace);
+	white-space: nowrap;
+}
+
+.engineering-toolkit .et-link {
+	cursor: pointer;
+	color: var(--text-accent);
+}
+
+.engineering-toolkit .et-status {
+	text-transform: lowercase;
+	color: var(--text-muted);
+}
+
+.engineering-toolkit .et-status-accepted,
+.engineering-toolkit .et-status-active,
+.engineering-toolkit .et-status-resolved,
+.engineering-toolkit .et-status-closed {
+	color: var(--color-green);
+}
+
+.engineering-toolkit .et-status-open,
+.engineering-toolkit .et-status-investigating {
+	color: var(--color-red);
+}
+
+.engineering-toolkit .et-status-superseded,
+.engineering-toolkit .et-status-deprecated,
+.engineering-toolkit .et-status-rejected {
+	text-decoration: line-through;
+}
+
+.engineering-toolkit .et-tree {
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-smaller);
+	background: var(--background-secondary);
+	padding: 0.6rem 0.8rem;
+	border-radius: var(--radius-s);
+	overflow-x: auto;
+	margin: 0 0 0.6rem;
+}
+
+.engineering-toolkit .et-group {
+	margin: 0.8rem 0;
+	border-left: 2px solid var(--background-modifier-border);
+	padding-left: 0.7rem;
+}
+
+.engineering-toolkit .et-group-head {
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+}
+
+.engineering-toolkit .et-issue {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	align-items: baseline;
+	padding: 0.15rem 0;
+}
+
+.engineering-toolkit .et-code {
+	font-family: var(--font-monospace);
+	color: var(--text-faint);
+}
+
+.engineering-toolkit .et-error .et-code {
+	color: var(--color-red);
+}
+
+.engineering-toolkit .et-warning .et-code {
+	color: var(--color-orange);
+}
+
+.engineering-toolkit .et-hint {
+	flex-basis: 100%;
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+}
+
+.engineering-toolkit .et-fix {
+	font-size: var(--font-ui-smaller);
+	padding: 0.05rem 0.4rem;
+}
+
+.engineering-toolkit .et-plan,
+.engineering-toolkit .et-log {
+	max-height: 40vh;
+	overflow-y: auto;
+	padding-left: 1.2rem;
+	font-size: var(--font-ui-smaller);
+}
+
+.engineering-toolkit .et-plan li,
+.engineering-toolkit .et-log li {
+	margin: 0.15rem 0;
+}
+
+.engineering-toolkit .et-log-rule {
+	font-weight: 600;
+}
+
+.engineering-toolkit .et-warning {
+	color: var(--color-orange);
+}

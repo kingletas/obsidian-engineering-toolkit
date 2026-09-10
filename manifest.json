@@ -1,0 +1,10 @@
+{
+	"id": "engineering-toolkit",
+	"name": "Engineering Toolkit",
+	"version": "0.2.0",
+	"minAppVersion": "1.5.0",
+	"description": "Light structure around engineering documentation already in the vault: ADRs, infrastructure, incidents, decisions, a linter and small automations. Markdown stays the source of truth.",
+	"author": "Luis Tineo",
+	"authorUrl": "https://github.com/kingletas/obsidian-engineering-toolkit",
+	"isDesktopOnly": false
+}
